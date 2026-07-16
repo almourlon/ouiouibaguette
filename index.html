@@ -56,14 +56,14 @@
     </figure>
     <figure>
       <img src="variabilité_intra_inter.png" alt="Heatmap of the cosine similarity of Ms 1007 compared to Ms 1054">
-      <figcaption>Figure 1. Heatmap of the cosine similarity of Ms 1007 related to Ms 1054.</figcaption>
+      <figcaption>Figure 3. Heatmap of the cosine similarity of Ms 1007 related to Ms 1054.</figcaption>
     </figure>
     <figure>
-      <img src="PCA.png" alt="Heatmap of the cosine similarity of Ms 1007 compared to Ms 1054">
-      <figcaption>Figure 4. Color are mixed, showing writting style coherence.</figcaption>
+      <img src="PCA.png" alt="Same-scribe letter variability vs. cross-manuscript similarity">
+      <figcaption>Figure 4. Same-scribe letter variability vs. cross-manuscript similarity.</figcaption>
     </figure>
     <figure>
-      <img src="prec_rec.png" alt="Heatmap of the cosine similarity of Ms 1007 compared to Ms 1054">
+      <img src="prec_rec.png" alt=" Establishing an Optimal Similarity Threshold">
       <figcaption>Figure 5. Establishing an Optimal Similarity Threshold.</figcaption>
     </figure>
   </section>
@@ -88,8 +88,21 @@
   <section>
     <h2>How it was made</h2>
     <p>
-      One short paragraph. Where the data came from, what produced the figure, and
-      how someone could rebuild it. The full detail lives in the
+      The data comes from two manuscripts held at the Besançon Municipal Library; the first <i>Histoire de la Franche-Comté de Bourgogne et en particulier de la cité royale de Besançon, capitale des Séquanois, composée par le R. P. Léopold Prost, de la Compagnie de Jésus, et continuée par le sr Pierre-François Barberot, avocat en Parlement, citoyen de Besançon</i> (Ms 1007) and the second is <i>Plusieurs dialogues, tant en françois qu'en patois, sur Besançon, receullis (sic) audit lieu l'an de grâce 1715</i> (Ms 1054). The idea is to compare the handwriting of the two</p>
+    <p>
+      The first step was to segment the characters. This was done simply by taking screenshots of the digitized documents. I decided, entirely arbitrarily, to select 7 words from each manuscript,64 letters per manuscript,for a total of 128 characters. I chose the same words from each manuscript so that the cursive letters would appear in the same context.
+    </p>
+    <p>
+      The next step was to experiment with my data to prepare it. My friend Claude kindly wrote two short Python scripts for me. The first was for binarizing the images (converting them to black and white) because I didn't have time to do it manually. The second was for resizing them and adding padding if needed.
+    </p>
+    <p>
+      Finally, the last step has arrived. In a notebook, I centered and converted my images to pixel vectors before calculating the cosine similarity. Since the heatmap is unreadable, I decided to use a table to display my data. I tried different ways to analyze my data to prove my hypothesis. Finally, I wondered what the ideal threshold was for defining a good score; apparently, in this case, it’s 0.75, but to be honest, I didn’t really understand it.
+    </p>
+    <p>
+      There are limits, like the data sample is too small, using pixels as vectors isn't really ideal; it depends more on the letter's position in the image than on its shape etc. But still, the idea here was mostly to experiment. 
+    </p>
+    <p>
+      The full detail lives in the
       <a href="README.md">README</a>.
     </p>
   </section>
