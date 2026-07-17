@@ -94,7 +94,7 @@
       The next step was to experiment with my data to prepare it. My friend Claude kindly wrote two short Python scripts for me. The first was for binarizing the images (converting them to black and white) because I didn't have time to do it manually. The second was for resizing them and adding padding if needed.
     </p>
     <p>
-      Finally, the last step has arrived. In a notebook, I centered and converted my images to pixel vectors before calculating the cosine similarity. Since the heatmap is unreadable, I decided to use a table to display my data. I tried different ways to analyze my data to prove my hypothesis. Finally, I wondered what the ideal threshold was for defining a good score; apparently, in this case, it’s 0.75, but to be honest, I didn’t really understand it.
+      Finally, the last step has arrived. In a notebook, I centered and converted my images to pixel vectors before calculating the cosine similarity. Since the heatmap is unreadable, I decided to use a table to display my data. I tried different ways to analyze my data to prove my hypothesis. Finally, I wondered what the ideal threshold was for defining a good score; apparently, in this case, it’s 0.75, but to be honest, I didn’t really understand it. All the code used is available in <a href="https://github.com/almourlon/ouiouibaguette">this repository</a>.
     </p>
     <p>
       There are limits, like the data sample is too small, using pixels as vectors isn't really ideal; it depends more on the letter's position in the image than on its shape etc. But still, the idea here was mostly to experiment. 
